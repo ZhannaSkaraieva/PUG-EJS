@@ -7,7 +7,7 @@
  npm install express
 
 3. Установка PUG & Express.js (це потужний двигун шаблонів для Node.js, який допомагає створювати легкі та зрозумілі HTML-шаблони.)
-npm install pug
+npm install pug-cli -g
 
 4. создается фаил app.js
 
@@ -22,6 +22,10 @@ npm install --save-dev nodemon
     "start": "node app.js", - npm start
     "dev": "nodemon app.js" - npm run dev
 
-8. 
+8. я удалилаи pug !!!!!!!
 
+9.  Установка Handlebars 
+npm install express-handlebars
+
+10. создаю файл main.hbs . Это общий макет сайта, к которому будет подключаться изменяющийся контент сайта
 
