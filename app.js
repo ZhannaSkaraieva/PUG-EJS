@@ -8,6 +8,7 @@ require('dotenv').config(); // загрузка переменных окруж�
 const router = express.Router();
 const { engine } = require('express-handlebars'); // подключение 
 const path = require('path');
+const cookieParser = require('cookie-parser');// подключение библиотеки 
 
 //НАСТРОЙКА Express.js РАБОТАТЬ СО СТАТИЧНЫМИ ФАЙЛАМИ В ПАПКЕ public.
 app.use(express.static(path.join(__dirname, 'public')))
@@ -34,6 +35,10 @@ const users = [
   { id: 1, name: 'Alex', email: 'alex@example.com' },
   { id: 2, name: 'Yevhenii', email: 'eugene@example.com' }
 ];
+
+//ПОДКЛЮЧАЕМ COOKIE КАК MIDLEWARE
+app.use(cookieParser(process.env.SECRET))//передаем секретный ключ
+
 
 //МАРШРУТ ДЛЯ ГЛАВОЙ СТРАНИЧКИ
 app.get('/users', (req, res) => {
